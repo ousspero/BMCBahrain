@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:BMSBahrain.Resx"
+             x:Class="BMSBahrain.Views.HomePage">
+
+    <Shell.TitleView>
+        <Grid BackgroundColor="Transparent">
+            <Label Style="{DynamicResource ShellTitle}" Text="{x:Static resources:AppResources.Main}" />
+            <Image  Source="home.png" />
+        </Grid>
+    </Shell.TitleView>
+    <Grid>
+        
+    </Grid>
+</ContentPage>

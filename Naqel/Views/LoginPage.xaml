@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+                          xmlns:resources="clr-namespace:BMSBahrain.Resx"
+             x:Class="BMSBahrain.Views.LoginPage"
+                >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#00B3C0</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>false</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Primary}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="logo3.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Frame  Style="{DynamicResource Entry}">
+                    <Entry Placeholder="{x:Static resources:AppResources.Username}" />
+                </Frame>
+                <Frame   Style="{DynamicResource Entry}">
+                    <Entry  Placeholder="{x:Static resources:AppResources.Password}" />
+                </Frame>
+
+                <Button Margin="0,24,0,0" Text="{x:Static resources:AppResources.Login}"
+                                               Style="{StaticResource Default}"
+                        Command="{Binding LoginCommand}"         
+                        />
+                <Button Text="{x:Static resources:AppResources.Register}"      
+                       Style="{StaticResource Secondary}"
+                        Command="{Binding RegisterCommand}"
+                 />
+                
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>

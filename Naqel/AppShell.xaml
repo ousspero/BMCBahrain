@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:BMSBahrain.Views"
+                                 xmlns:resources="clr-namespace:BMSBahrain.Resx"
+      
+       Title="BMSBahrain"
+       x:Class="BMSBahrain.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" /> 
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Primary}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="Black"/>
+
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar >
+
+        <ShellContent Title="{x:Static resources:AppResources.Config}" Icon="setting.png"  Route="SettingPage"   ContentTemplate="{DataTemplate local:SettingPage}" />
+        <ShellContent Title="{x:Static resources:AppResources.Payment}" Icon="payment.png"  ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="{x:Static resources:AppResources.Account}" Icon="account.png"   ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent  Title="{x:Static resources:AppResources.Main}" Icon="home.png" Route="HomePage"   ContentTemplate="{DataTemplate local:HomePage}" />
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+
+
+</Shell>

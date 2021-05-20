@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMSBahrain.Views.RegisterPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+              xmlns:resources="clr-namespace:BMSBahrain.Resx"
+               
+             >
+
+    
+    <NavigationPage.TitleView>
+        <Grid BackgroundColor="Transparent"  >
+            <Label Style="{DynamicResource ShellTitle}" Text="{x:Static resources:AppResources.Register}" />
+        </Grid>
+    </NavigationPage.TitleView>
+
+
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="1" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Text="{x:Static resources:AppResources.RegisterSubTitle}" HorizontalOptions="Center" Margin="0,8,0,16" />
+            <BoxView  Grid.Row="1" HorizontalOptions="CenterAndExpand" Color="Black" />
+            <ScrollView Grid.Row="2"  >
+                <StackLayout Spacing="16" >
+                    <Frame Style="{DynamicResource Entry}"  >
+                        <Entry Keyboard="Text" Text="{Binding Model.FullName}"  Placeholder="{x:Static resources:AppResources.Fullname}" >
+                            <Entry.Behaviors>
+                                <xct:MultiValidationBehavior>
+                                    <xct:TextValidationBehavior Flags="ValidateOnFocusing" />
+                                </xct:MultiValidationBehavior>
+                            </Entry.Behaviors>
+                        </Entry>
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Keyboard="Text" Text="{Binding Model.FatherName}"  Placeholder="{x:Static resources:AppResources.Fathername}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Keyboard="Email" Text="{Binding Model.Email}"   Placeholder="{x:Static resources:AppResources.Email}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry  Keyboard="Telephone" Text="{Binding Model.PhoneNumber}"   Placeholder="{x:Static resources:AppResources.Phonenumber}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Text="{Binding Model.BloodGroup}"    Placeholder="{x:Static resources:AppResources.Bloodgroup}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Text="{Binding Model.Age}"   Keyboard="Numeric" Placeholder="{x:Static resources:AppResources.Age}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry  Text="{Binding Model.Weight}" Keyboard="Numeric"  Placeholder="{x:Static resources:AppResources.Weight}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry  Text="{Binding Model.Height}" Keyboard="Numeric" Placeholder="{x:Static resources:AppResources.Height}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Text="{Binding Model.Address}"   Placeholder="{x:Static resources:AppResources.Address}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Text="{Binding Model.Password}" IsPassword="True"  Placeholder="{x:Static resources:AppResources.Password}" />
+                    </Frame>
+                    <Frame Style="{DynamicResource Entry}">
+                        <Entry Text="{Binding Model.ConfirmPassword}" IsPassword="True"  Placeholder="{x:Static resources:AppResources.Confirmpassword}" />
+                    </Frame>
+                    <Button Text="{x:Static resources:AppResources.Register}" 
+                        Command="{Binding RegiserCommand}"
+                            Style="{StaticResource Default}"
+                            />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

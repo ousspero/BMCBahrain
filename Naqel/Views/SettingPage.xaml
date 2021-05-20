@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:BMSBahrain.Resx"
+             x:Class="BMSBahrain.Views.SettingPage">
+    <Shell.TitleView>
+        <Grid BackgroundColor="Transparent">
+            <Label  Style="{DynamicResource ShellTitle}" Text="{x:Static resources:AppResources.Config}"/>
+        </Grid>
+    </Shell.TitleView>
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Frame VerticalOptions="Center" HorizontalOptions="Center">
+                
+                <Grid >
+                    <Label Grid.Row="0" HorizontalOptions="Center" FontSize="Title" Text="{x:Static resources:AppResources.AppLanguage}" />
+                    <Label  Grid.Row="1"  HorizontalOptions="Center"  FontSize="Subtitle" Text="{x:Static resources:AppResources.ChangeTheLanguagePhrase}" />
+                    <Picker Grid.Row="2" Title="{x:Static resources:AppResources.Current}"   HorizontalOptions="Center"   SelectedIndexChanged="Picker_SelectedIndexChanged" >
+                        <Picker.Items>
+                            <x:String>English</x:String>
+                            <x:String>Français</x:String>
+                            <x:String>العربية</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+            </Frame>
+            <Frame  Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center">
+
+                <Grid >
+                <Label Grid.Row="0" HorizontalOptions="Center" FontSize="Title" Text="{x:Static resources:AppResources.DectivateNotification}" />
+                <Label  Grid.Row="1"  HorizontalOptions="Center"  FontSize="Subtitle" Text="{x:Static resources:AppResources.ChooseDeactivation}" />
+                <Switch Grid.Row="2" HorizontalOptions="Center"  IsToggled="True" /> 
+            </Grid>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
