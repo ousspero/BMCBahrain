@@ -7,7 +7,6 @@
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
-        <ResourceDictionary>
             <Color x:Key="Primary">#708090</Color>
             <Color x:Key="Accent">#F1F2F4</Color>
             <Color x:Key="AccentFrame">#FFFFFF</Color>
@@ -19,10 +18,10 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource Accent}"></Setter>
             </Style>
             <Style TargetType="Grid">
-                <Setter Property="BackgroundColor" Value="{StaticResource Accent}"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentFrame}"></Setter>
             </Style>
             <Style TargetType="StackLayout">
-                <Setter Property="BackgroundColor" Value="{StaticResource Accent}"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentFrame}"></Setter>
                 <Setter Property="Padding" Value="4"></Setter>
             </Style>
             <Style TargetType="Label">
@@ -49,8 +48,8 @@
         
             
             <Style TargetType="Frame">
-                <Setter Property="CornerRadius" Value="9"></Setter>
-                <Setter Property="BackgroundColor" Value="{StaticResource Accent}"></Setter>
+                <Setter Property="CornerRadius" Value="4"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentFrame}"></Setter>
             </Style>
 
             <Style x:Key="Entry" TargetType="Frame">
@@ -60,8 +59,12 @@
                 <Setter Property="HasShadow" Value="False"></Setter>
                 <Setter Property="BackgroundColor" Value="{StaticResource AccentFrame}"></Setter>
             </Style>
-    
 
+
+            <Style x:Key="Editor" TargetType="Frame" BasedOn="{StaticResource Entry}">
+                <Setter Property="HeightRequest" Value="128"></Setter>
+  
+            </Style>
             <Style  x:Key="Default"  TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="FontFamily" Value="Cairo"></Setter>
@@ -87,8 +90,6 @@
             <Style x:Key="Secondary" TargetType="Button" BasedOn="{StaticResource Default}">
                 <Setter Property="BackgroundColor" Value="{StaticResource AccentFrame}"></Setter>
             </Style>
-            
-    
-        </ResourceDictionary>
+
     </Application.Resources>
 </Application>

@@ -11,19 +11,30 @@ namespace BMSBahrain.ViewModels
     public class PatientInfoViewModel : BaseViewModel
     {
         public ICommand UploadImageCommand { get; set; }
+        public ICommand UploadMedicineCommand { get; set; }
         public string UploadSource { get => uploadSource; set => SetProperty(ref uploadSource, value); }
+        public string UploadMedicine { get => uploadMedicine; set => SetProperty(ref uploadMedicine, value); }
+
 
         string uploadSource;
+        string uploadMedicine;
+
         public PatientInfoViewModel()
         {
             UploadImageCommand = new Command(UploadImageAction);
+            UploadMedicineCommand = new Command(UploadMedicineAction);
+        }
+
+        private async void UploadMedicineAction(object obj)
+        {
+            var imageFile = await MediaPicker.PickVideoAsync(new MediaPickerOptions { Title = "pick medicine" });
+            uploadMedicine = imageFile.FullPath;
         }
 
         private async void UploadImageAction(object obj)
         {
-            var xx = await MediaPicker.CapturePhotoAsync(new MediaPickerOptions { Title = "testtt" });
-            string yy =  xx.FullPath;
-            UploadSource = yy;
+            var imageFile = await MediaPicker.PickVideoAsync(new MediaPickerOptions { Title = "pick image" });
+            UploadSource = imageFile.FullPath;
         }
     }
 }
