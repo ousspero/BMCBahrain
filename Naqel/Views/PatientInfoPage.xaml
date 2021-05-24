@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="BMSBahrain.Views.PatientInfoPage">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Frame  CornerRadius="9">
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label VerticalOptions="Start"  Text="First time visit ?" />
+                    <Switch VerticalOptions="Start"  IsToggled="True" />
+                </StackLayout>-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label    Text="First time visit ?" />
+                    <Switch    Grid.Column="1"  IsToggled="True" />
+                </Grid>
+            </Frame>
+
+            <Frame  x:Name="no" Grid.Row="1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label    Text="When did you visited last time ? " />
+                    <DatePicker Grid.Row="1"   />
+
+                    <Label Grid.Row="2"   Text="Any Improvement ?" />
+                    <Switch  x:Name="improvment" Grid.Row="2"  Grid.Column="1"  IsToggled="True" />
+                    <Entry Grid.Row="3" Keyboard="Numeric" Text="0"  IsEnabled="{Binding Source={x:Reference improvment},Path=IsToggled}" />
+
+                    <Label Grid.Row="4"   Text="Upload the photo" />
+                    <Button  Grid.Row="5" Command="{Binding UploadImageCommand}" Text="Upload image" />
+                    <Image Source="{Binding UploadSource,Mode=TwoWay}" Grid.Row="6"  Aspect="AspectFill" />
+                </Grid>
+            </Frame>
+
+
+            <Frame  x:Name="yes" Grid.Row="2" >
+
+            </Frame>
+            
+            
+        </Grid>
+    </ContentPage.Content> 
+</ContentPage>

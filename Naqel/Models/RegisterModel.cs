@@ -6,7 +6,6 @@ namespace BMSBahrain.Models
 {
     public class RegisterModel
     {
-
         public string Id { get; set; }
         public string FullName { get; set; }
         public string FatherName { get; set; }
