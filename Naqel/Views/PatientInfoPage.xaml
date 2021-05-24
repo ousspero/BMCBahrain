@@ -10,7 +10,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
+        
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
@@ -30,34 +30,51 @@
                     </Grid>
                 </Frame>
 
-                <Frame  BackgroundColor="Red" x:Name="no" Grid.Row="1" IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled}" >
+                <Frame  x:Name="no" Grid.Row="1" IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled}" >
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                        </Grid.ColumnDefinitions>
+                        
+              
+                    <Frame>
+                        <StackLayout>
                         <Label    Text="When did you visited last time ? " />
-                        <DatePicker Grid.Row="1"   />
+                        <DatePicker   />
+                        </StackLayout>
+                    </Frame>
 
-                        <Label Grid.Row="2"   Text="Any Improvement ?" />
-                        <Switch  x:Name="improvment" Grid.Row="2"  Grid.Column="1"  IsToggled="True" />
-                        <Entry Grid.Row="3" Keyboard="Numeric" Text="0"  IsEnabled="{Binding Source={x:Reference improvment},Path=IsToggled}" />
-
-                        <Label Grid.Row="4"   Text="Upload the photo (medicine get last time)" />
-                        <Button  Grid.Row="5" Command="{Binding UploadImageCommand}" Text="Upload image" />
-                        <Image Source="{Binding UploadSource,Mode=TwoWay}" Grid.Row="6" WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
-                    </Grid>
+                    <Frame Grid.Row="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0"   Text="Any Improvement ?" />
+                            <Switch  x:Name="improvment" Grid.Row="0"  Grid.Column="1"  IsToggled="True" />
+                            <Frame Grid.Row="2" Style="{StaticResource Entry}"> 
+                                <Entry  Keyboard="Numeric" Placeholder="0%"  IsEnabled="{Binding Source={x:Reference improvment},Path=IsToggled}" />
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2">
+                        <StackLayout>
+                         <Label    Text="Upload the photo (medicine get last time)" />
+                        <Button  Style="{StaticResource Secondary}" Command="{Binding UploadImageCommand}" Text="Upload image" />
+                        <Image Source="{Binding UploadSource,Mode=TwoWay}"  WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
                 </Frame>
 
-                <Frame BackgroundColor="Red"  Margin="4" x:Name="yes" Grid.Row="1"  IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled,Converter={StaticResource falseToTrue}}" >
+                <Frame  Margin="4" x:Name="yes" Grid.Row="1"  IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled,Converter={StaticResource falseToTrue}}" >
+                <ScrollView VerticalScrollBarVisibility="Never" >
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -85,10 +102,12 @@
 
                         <Frame Grid.Row="3" >
                             <StackLayout>
-                                <Label  Text="Have you taken Any Medicine ?" />
+                                <StackLayout Orientation="Horizontal">
+                                 <Label  Text="Have you taken Any Medicine ?" />
                                 <Switch  x:Name="takemedicine" IsToggled="True" />
-                                <Frame Style="{StaticResource Entry}">
-                                    <Entry   Placeholder="Name of your medicine"  IsVisible="{Binding Source={x:Reference takemedicine},Path=IsToggled}"/>
+                                </StackLayout>
+                                <Frame Style="{StaticResource Entry}" IsVisible="{Binding Source={x:Reference takemedicine},Path=IsToggled}">
+                                    <Entry   Placeholder="Name of your medicine"  />
                                 </Frame>
                             </StackLayout>
                         </Frame>
@@ -96,30 +115,34 @@
                             <StackLayout>
                                 <Label      Text="Upload the photo (medicine get last time)" />
                                 <Button   Command="{Binding UploadMedicineCommand}" Style="{StaticResource Secondary}" Text="Upload image" />
-                                <Image   Source="{Binding uploadMedicine,Mode=TwoWay}"  WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
+                                <Image   Source="{Binding UploadMedicine,Mode=TwoWay}"  WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
                             </StackLayout>
                         </Frame>
                         <Frame Grid.Row="5">
                             <StackLayout>
-                                <Label    Text="Do you  have any allergy" />
-                                <Switch   x:Name="allergy" IsToggled="True" />
-                                <Entry  Placeholder="Enter a brief description" IsVisible="{Binding Source={x:Reference allergy},Path=IsToggled}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label    Text="Do you  have any allergy" />
+                                    <Switch   x:Name="allergy" IsToggled="True" />
+                                </StackLayout>
+                                <Frame Style="{StaticResource Editor}" IsVisible="{Binding Source={x:Reference allergy},Path=IsToggled}">
+                                    <Editor  Placeholder="Enter a brief description" />
+                                </Frame>
                             </StackLayout>
                         </Frame>
 
                         <Frame Grid.Row="6">
                             <StackLayout>
                                 <Label  Grid.Row="13"  Text="Do you have a regular medicine like (Diabetes,  Blood pressure or any other)"/>
-                                <Switch  Grid.Row="13" IsToggled="True" />
+                                <Switch  Grid.Row="13" IsToggled="True" HorizontalOptions="Center" />
                             </StackLayout>
                         </Frame>
 
+                        <Button Grid.Row="7" Text="Generate QR Code" />
                     </Grid>
-
-                </Frame>
+                </ScrollView>
+            </Frame>
 
 
             </Grid>
-        </ScrollView>
     </ContentPage.Content> 
 </ContentPage>

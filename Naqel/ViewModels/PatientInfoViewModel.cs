@@ -27,13 +27,13 @@ namespace BMSBahrain.ViewModels
 
         private async void UploadMedicineAction(object obj)
         {
-            var imageFile = await MediaPicker.PickVideoAsync(new MediaPickerOptions { Title = "pick medicine" });
-            uploadMedicine = imageFile.FullPath;
+            var imageFile = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "pick medicine" });
+            UploadMedicine = imageFile.FullPath;
         }
 
         private async void UploadImageAction(object obj)
         {
-            var imageFile = await MediaPicker.PickVideoAsync(new MediaPickerOptions { Title = "pick image" });
+            var imageFile = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "pick image" });
             UploadSource = imageFile.FullPath;
         }
     }
