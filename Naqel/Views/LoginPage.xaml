@@ -10,7 +10,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#00B3C0</Color>
+            <Color x:Key="Accent">#00B3C2</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
     
