@@ -21,7 +21,7 @@ namespace BMSBahrain
             //MainPage = navigation;
             //MainPage.FlowDirection = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
 
-            MainPage = new PatientInfoPage();
+            MainPage = new AppointmentPage();
 
         }
 
