@@ -30,7 +30,7 @@
                     </Grid>
                 </Frame>
 
-                <Frame  x:Name="no" Grid.Row="1" IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled}" >
+            <Frame  x:Name="no" Grid.Row="1" IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled,Converter={StaticResource  falseToTrue}}" >
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -73,7 +73,7 @@
                 </Grid>
                 </Frame>
 
-                <Frame  Margin="4" x:Name="yes" Grid.Row="1"  IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled,Converter={StaticResource falseToTrue}}" >
+                <Frame  Margin="4" x:Name="yes" Grid.Row="1"  IsVisible="{Binding Source={x:Reference firstVisit},Path=IsToggled}" >
                 <ScrollView VerticalScrollBarVisibility="Never" >
                     <Grid>
                         <Grid.RowDefinitions>

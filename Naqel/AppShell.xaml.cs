@@ -14,6 +14,9 @@ namespace BMSBahrain
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(AppointmentPage), typeof(AppointmentPage));
+            Routing.RegisterRoute(nameof(PatientInfoPage), typeof(PatientInfoPage));
         }
 
     }

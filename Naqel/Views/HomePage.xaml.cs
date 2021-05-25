@@ -10,6 +10,7 @@ namespace BMSBahrain.Views
         public HomePage()
         {
             InitializeComponent();
+ 
         }
     }
 }

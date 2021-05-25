@@ -23,6 +23,7 @@ namespace BMSBahrain.Droid
             base.OnResume();
             Task startupWork = new Task(() => { SimulateStartup(); });
             startupWork.Start();
+            OverridePendingTransition(0, 0);
         }
 
         // Prevent the back button from canceling the startup process

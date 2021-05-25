@@ -23,7 +23,7 @@ namespace BMSBahrain.Droid
             base.OnCreate(savedInstanceState);
 
             TypefaceUtil.overrideFont(this.Assets, "SERIF", "Cairo-Regular.ttf"); // font from assets: "assets/fonts/Montserrat_Regular.ttf
-
+            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
