@@ -132,6 +132,9 @@
   <data name="AppLanguage" xml:space="preserve">
     <value>Application language</value>
   </data>
+  <data name="Appoint" xml:space="preserve">
+    <value>Appointment</value>
+  </data>
   <data name="Bloodgroup" xml:space="preserve">
     <value>Blood group</value>
   </data>

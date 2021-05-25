@@ -132,6 +132,9 @@
   <data name="AppLanguage" xml:space="preserve">
     <value>Application language</value>
   </data>
+  <data name="Appoint" xml:space="preserve">
+    <value>Appointment</value>
+  </data>
   <data name="Bloodgroup" xml:space="preserve">
     <value>Blood group</value>
   </data>
@@ -197,6 +200,9 @@
   </data>
   <data name="Phonenumber" xml:space="preserve">
     <value>Phone number</value>
+  </data>
+  <data name="qrcode" xml:space="preserve">
+    <value>QR Code</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Sign up</value>

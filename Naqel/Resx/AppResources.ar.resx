@@ -132,6 +132,9 @@
   <data name="AppLanguage" xml:space="preserve">
     <value>لغة التطبيق</value>
   </data>
+  <data name="Appoint" xml:space="preserve">
+    <value>موعد</value>
+  </data>
   <data name="Bloodgroup" xml:space="preserve">
     <value>زمرة الدم</value>
   </data>
@@ -197,6 +200,9 @@
   </data>
   <data name="Phonenumber" xml:space="preserve">
     <value>رقم الهاتف</value>
+  </data>
+  <data name="qrcode" xml:space="preserve">
+    <value>كود QR</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>تسجيل جديد</value>

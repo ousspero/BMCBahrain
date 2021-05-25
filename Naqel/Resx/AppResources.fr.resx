@@ -129,6 +129,9 @@
   <data name="AppLanguage" xml:space="preserve">
     <value>Langage de l'application</value>
   </data>
+  <data name="Appoint" xml:space="preserve">
+    <value>RDV</value>
+  </data>
   <data name="Bloodgroup" xml:space="preserve">
     <value>Blood group</value>
   </data>

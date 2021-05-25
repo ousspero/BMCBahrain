@@ -106,6 +106,15 @@ namespace BMSBahrain.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appointment.
+        /// </summary>
+        public static string Appoint {
+            get {
+                return ResourceManager.GetString("Appoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blood group.
         /// </summary>
         public static string Bloodgroup {
@@ -300,6 +309,15 @@ namespace BMSBahrain.Resx {
         public static string Phonenumber {
             get {
                 return ResourceManager.GetString("Phonenumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code.
+        /// </summary>
+        public static string qrcode {
+            get {
+                return ResourceManager.GetString("qrcode", resourceCulture);
             }
         }
         
