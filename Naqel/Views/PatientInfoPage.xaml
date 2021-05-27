@@ -26,7 +26,7 @@
                             <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
                         <Label    Text="First time visit ?" />
-                        <Switch  x:Name="firstVisit"  Grid.Column="1"  IsToggled="True" />
+                        <Switch  x:Name="firstVisit"  Grid.Column="1"  IsToggled="{Binding PatientModel.IsFirstVisit}" />
                     </Grid>
                 </Frame>
 
@@ -42,7 +42,7 @@
                     <Frame>
                         <StackLayout>
                         <Label    Text="When did you visited last time ? " />
-                        <DatePicker   />
+                            <DatePicker Date="{Binding PatientModel.LastVisit}"   />
                         </StackLayout>
                     </Frame>
 
@@ -57,9 +57,9 @@
                                 <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Row="0"   Text="Any Improvement ?" />
-                            <Switch  x:Name="improvment" Grid.Row="0"  Grid.Column="1"  IsToggled="True" />
-                            <Frame Grid.Row="2" Style="{StaticResource Entry}"> 
-                                <Entry  Keyboard="Numeric" Placeholder="0%"  IsEnabled="{Binding Source={x:Reference improvment},Path=IsToggled}" />
+                            <Switch  x:Name="improvment" Grid.Row="0"  Grid.Column="1"  IsToggled="{Binding PatientModel.IsImproved}" />
+                            <Frame Grid.Row="2" Style="{StaticResource Entry}">
+                                <Entry  Keyboard="Numeric" Text="{Binding PatientModel.ImprovmentPercentage}" Placeholder="0%"  IsEnabled="{Binding Source={x:Reference improvment},Path=IsToggled}" />
                             </Frame>
                         </Grid>
                     </Frame>
@@ -67,7 +67,7 @@
                         <StackLayout>
                          <Label    Text="Upload the photo (medicine get last time)" />
                         <Button  Style="{StaticResource Secondary}" Command="{Binding UploadImageCommand}" Text="Upload image" />
-                        <Image Source="{Binding UploadSource,Mode=TwoWay}"  WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
+                            <Image Source="{Binding PatientModel.LastMedicineImage,Mode=TwoWay}"  WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
                         </StackLayout>
                     </Frame>
                 </Grid>
@@ -113,7 +113,7 @@
                         </Frame>
                         <Frame Grid.Row="4">
                             <StackLayout>
-                                <Label      Text="Upload the photo (medicine get last time)" />
+                                <Label    Text="Upload the photo (medicine get last time)" />
                                 <Button   Command="{Binding UploadMedicineCommand}" Style="{StaticResource Secondary}" Text="Upload image" />
                                 <Image   Source="{Binding UploadMedicine,Mode=TwoWay}"  WidthRequest="100" HeightRequest="160" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Aspect="AspectFit" />
                             </StackLayout>

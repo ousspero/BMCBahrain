@@ -34,10 +34,13 @@
 
     <TabBar >
 
-        <ShellContent Title="{x:Static resources:AppResources.Config}" Icon="setting.png"  Route="SettingPage"   ContentTemplate="{DataTemplate local:SettingPage}" />
-        <ShellContent Title="{x:Static resources:AppResources.Appoint}" Icon="account.png"   ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent  Title="{x:Static resources:AppResources.Main}" Icon="home.png" Route="HomePage"   ContentTemplate="{DataTemplate local:PatientInfoPage}" />
-        <ShellContent  Title="{x:Static resources:AppResources.qrcode}" Icon="list.png" Route="HomePage"   ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent  Title="{x:Static resources:AppResources.Config}" Icon="setting.png"  Route="SettingPage"   ContentTemplate="{DataTemplate local:SettingPage}" />
+        <ShellContent  Title="{x:Static resources:AppResources.Appoint}" Icon="account.png"   ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent  Title="{x:Static resources:AppResources.Main}"   Icon="home.png"     Route="HomePage"   ContentTemplate="{DataTemplate local:PatientInfoPage}" />
+        <ShellContent  Title="{x:Static resources:AppResources.qrcode}" Icon="list.png"      Route="HomePage"   ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent  Title="{x:Static resources:AppResources.qrcode}" Icon="list.png"     ContentTemplate="{DataTemplate local:DoctorInfo}" />
+        <ShellContent  Title="{x:Static resources:AppResources.qrcode}" Icon="list.png"     ContentTemplate="{DataTemplate local:AppointmentPage}" />
+
     </TabBar>
 
     <!--
