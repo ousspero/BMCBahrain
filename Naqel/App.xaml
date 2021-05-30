@@ -24,11 +24,22 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource AccentFrame}"></Setter>
                 <Setter Property="Padding" Value="4"></Setter>
             </Style>
+        
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="Cairo"></Setter>
-            </Style>    
-            
-            <Style x:Key="ShellTitle" TargetType="Label">
+            </Style>
+
+            <Style x:Key="RedLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="Cairo"></Setter>
+                <Setter Property="BackgroundColor" Value="Red"></Setter>
+            </Style>
+        
+        <Style x:Key="BigRedLabel" TargetType="Label" BasedOn="{StaticResource RedLabel}">
+            <Setter Property="FontSize" Value="36" />
+        </Style>
+
+
+        <Style x:Key="ShellTitle" TargetType="Label">
                 <Setter Property="FontFamily" Value="Cairo"></Setter>
                 <Setter Property="TextColor" Value="{DynamicResource Accent}"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>

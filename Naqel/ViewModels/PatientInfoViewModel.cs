@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.IO;
+using BMSBahrain.Models;
 
 namespace BMSBahrain.ViewModels
 {
@@ -12,17 +13,19 @@ namespace BMSBahrain.ViewModels
     {
         public ICommand UploadImageCommand { get; set; }
         public ICommand UploadMedicineCommand { get; set; }
-        public string UploadSource { get => uploadSource; set => SetProperty(ref uploadSource, value); }
         public string UploadMedicine { get => uploadMedicine; set => SetProperty(ref uploadMedicine, value); }
+        public PatientModel PatientModel { get => _patientModel; set => SetProperty(ref _patientModel, value); }
 
 
-        string uploadSource;
+        PatientModel _patientModel;
+
         string uploadMedicine;
 
         public PatientInfoViewModel()
         {
             UploadImageCommand = new Command(UploadImageAction);
             UploadMedicineCommand = new Command(UploadMedicineAction);
+            PatientModel = new PatientModel();
         }
 
         private async void UploadMedicineAction(object obj)
@@ -34,7 +37,7 @@ namespace BMSBahrain.ViewModels
         private async void UploadImageAction(object obj)
         {
             var imageFile = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "pick image" });
-            UploadSource = imageFile.FullPath;
+            PatientModel.LastMedicineImage = imageFile.FullPath;
         }
     }
 }
